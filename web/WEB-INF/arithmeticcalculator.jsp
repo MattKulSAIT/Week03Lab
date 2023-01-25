@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Arithmetic Calculator</h1>
-        <form action="age" method="post">
+        <form action="math" method="post">
             First: <input type="text" name="firstVal" value='${firstVal}'><br>
             Second: <input type="text" name="secondVal" value='${secondVal}'><br>
             <input type="submit" name="math" value='+'>
