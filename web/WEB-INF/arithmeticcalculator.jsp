@@ -16,10 +16,10 @@
         <form action="age" method="post">
             First: <input type="text" name="firstVal" value='${firstVal}'><br>
             Second: <input type="text" name="secondVal" value='${secondVal}'><br>
-            <input type="submit" name="math" value="+">
-            <input type="submit" name="math" value="-">
-            <input type="submit" name="math" value="*">
-            <input type="submit" name="math" value="%"><br>
+            <input type="submit" name="math" value='+'>
+            <input type="submit" name="math" value='-'>
+            <input type="submit" name="math" value='*'>
+            <input type="submit" name="math" value='%'><br>
             Result:${theValue}<br>
             <a href="age">Age Calculator</a>
     </body>
