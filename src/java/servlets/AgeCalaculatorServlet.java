@@ -29,15 +29,25 @@ public class AgeCalaculatorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String theAge = request.getParameter("theAge");
-        int theAgeI = Integer.parseInt(theAge);
+        try{
+            int theAgeI = Integer.parseInt(theAge);
         theAgeI++;
         String message = "Your age next birthday will be "+theAgeI;
          request.setAttribute("theAgeI", message);
         getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp")
                 .forward(request, response);
-       
-        
-        
+        }catch(NumberFormatException e){
+            String error = "";
+            if (theAge.equals("")){
+                error = "You must enter your current age.";
+            }
+            else{
+                error = "You must enter a number.";
+            }
+            request.setAttribute("theAgeI", error);
+            getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp")
+                .forward(request, response);
+        }
     }
 
 }
